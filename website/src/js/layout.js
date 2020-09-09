@@ -117,7 +117,7 @@ var Layout = function() {
 
                 break;
         }
-    })
+    });
 
     // Add sidenav modifier classes on mouse events
 
