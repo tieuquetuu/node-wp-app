@@ -1,3 +1,5 @@
 {
-    "/javascripts/react-theme.js": "/javascripts/react-theme.js"
+    "/css/theme.css": "/css/theme.css",
+    "/js/theme.core.js": "/js/theme.core.js",
+    "/js/theme.js": "/js/theme.js"
 }

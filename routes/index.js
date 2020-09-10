@@ -1,14 +1,56 @@
 var express = require('express');
 var router = express.Router();
+var WP_REST_API = require("../inc/wp-rest-api");
 var website = require('../inc/website');
+var helpers = require("../inc/helpers");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-    title: 'Express',
-    styles: website.bundleCssURLs(),
-    scripts: website.bundleJsURLs()
-  });
+    var {query} = req;
+    async function GetStoreProducts(query) {
+        var {per_page, page} = query;
+        per_page = ["number", "string"].includes(typeof per_page) && parseInt(per_page) > 0 ? per_page : null;
+        page = ["number", "string"].includes(typeof page) && parseInt(per_page) > 0 ? page : null;
+        try {
+            var products = await WP_REST_API.products()
+                .param("per_page", per_page)
+                .param("page", page);
+
+            return products;
+        } catch (e) {
+            Promise.reject(e);
+        }
+    }
+    GetStoreProducts(query)
+        .then(Success).catch(Failed);
+    function Success(products) {
+        res.render('index', {
+            helpers: helpers,
+            title: "Home Page",
+            bodyClass: "homepage",
+            products: products
+        });
+    }
+    function Failed(e) {
+        res.status(401).send(e)
+    }
+});
+
+router.get('/store/product/:id', function (req, res) {
+    var {params} = req;
+    console.log(params)
+    async function getProduct(query) {
+
+    }
+    function Success(product) {
+        res.send(product)
+    }
+    function Failed(e) {
+        res.send(e)
+    }
+    getProduct()
+        .then(Success)
+        .catch(Failed)
 });
 
 module.exports = router;

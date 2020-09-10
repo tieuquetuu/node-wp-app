@@ -1,7 +1,79 @@
 <%- include('header') %>
 
-<div class="main-content" style="min-height: 1000px" data-offset-top="#header-main">
+<div class="main-content" style="height: 100%">
+    <section class="bg-section-secondary pb-3" data-offset-top="#header-main">
+        <div class="container">
 
+            <div class="row small-columns-2 medium-columns-3 large-columns-5 mt-4">
+
+                <% products.forEach(function(product) {
+                    var {images} = product;
+                    var featureImage = typeof images == "object" && images instanceof Array ? images[0] : false;
+                    var productUrl = `/store/product/${product.id}`;
+                    var productName = helpers.htmlEntitiesDecode(product.name);
+                    var productOnsale = product.on_sale;
+                    var productPrices = product.prices;
+                    var price = productPrices.price;
+                    var regularPrice = product.regular_price;
+                    var salePrice = product.sale_price;
+                    var productPriceHtml = product.price_html;
+                    var priceCurrency_symbol = productPrices.currency_symbol;
+                %>
+                    <div id="product-<%= product.id %>" class="px-1 col col-xl-3 col-lg-4 col-sm-6 col-xs-12">
+                        <div class="card mb-2 overflow-hidden border-0" data-animate-hover="2">
+                            <div class="overflow-hidden">
+                                <div class="animate-this">
+                                    <a href="<%= productUrl %>">
+<!--                                        <img alt="Image placeholder" src="../../assets/img/theme/light/img-1-800x600.jpg" class="card-img-top">-->
+                                        <img id="thumbnail-<%= featureImage.id %>" alt="<%= typeof featureImage.alt === "string" ? featureImage.alt : productName %>" src="<%= featureImage.src %>"
+                                             data-src="<%= featureImage.src %>" class="card-img-top" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+                                <h6 data-original-title="<%= productName %>">
+                                    <a href="<%= productUrl %>" title="<%= productName %>" class="h6 font-weight-bold text-sm">
+                                        <%= productName %></a>
+                                </h6>
+                                <div>
+                                    <span class="card-price text-success font-weight-600"><%= salePrice < regularPrice ? salePrice : price + " " + priceCurrency_symbol %></span>
+                                    <% if(salePrice < regularPrice) { %>
+                                        <span class="card-price text-muted text-line-through text-xs"><%= regularPrice + " " + priceCurrency_symbol %></span>
+                                    <% } %>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col text-right">
+                                        <button type="button" data-toggle="tooltip"
+                                                title="Thêm vào giỏ" data-original-title="Thêm vào giỏ"
+                                                class="btn btn-secondary rounded-circle btn-icon-only btn-sm">
+                                            <span class="btn-inner--icon">
+                                                <i class="far fa-cart-plus"></i>
+                                            </span>
+                                        </button>
+                                        <button type="button" data-toggle="tooltip"
+                                                title="Yêu Thích" data-original-title="Yêu Thích"
+                                                class="btn btn-secondary rounded-circle btn-icon-only btn-sm">
+                                            <span class="btn-inner--icon">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+
+            </div>
+            <div class="w-100 mt-4 text-center">
+                <button type="button" class="btn btn-sm btn-soft-primary" onclick="alert('xem them nao')">
+                    <span class="btn-inner--text">Xem Thêm</span>
+                    <span class="ml-2 spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+
+        </div>
+    </section>
 </div>
 
 <%- include('footer') %>

@@ -1,6 +1,7 @@
 // Dependencies
 var fs = require('fs');
 var path = require('path');
+var Entities = require("html-entities").AllHtmlEntities;
 
 // define helpers
 var helpers = {};
@@ -19,6 +20,12 @@ helpers.WebsiteBundleJs = function() {
     var dir = fs.readdirSync(helpers.WebsiteBuildStaticJs);
     var files = dir.filter(file => path.extname(file) === '.js' && file.includes('.chunk.js'));
     return files;
+}
+
+helpers.htmlEntitiesDecode = function(str) {
+    const entities = new Entities();
+    var Title = entities.decode(str);
+    return Title;
 }
 
 module.exports = helpers;
