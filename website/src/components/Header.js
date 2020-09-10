@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {toggleSidenav} from "../js/toggle-sidenav";
 
 function Header() {
-    return (<header className="header fixed-top border-bottom">
+    useEffect(() => {
+
+    });
+
+    return (<header id="header-main" className="header fixed-top border-bottom">
         {/*<!-- Nav -->*/}
         <nav id="navbar-main" className="navbar navbar-expand-lg navbar-light bg-white">
             <div className="container-fluid">
@@ -11,8 +16,7 @@ function Header() {
                          style={{width: 120}}/>
                 </a>
                 {/*<!-- Sidenav toggler -->*/}
-                <button className="sidenav-toggler ml-auto mr-3" type="button" data-action="sidenav-pin"
-                        data-target="#sidenav-main">
+                <button className="sidenav-toggler ml-auto mr-3" type="button" data-target="#sidenav-main" data-action={""} onClick={toggleSidenav}>
                     <div className="sidenav-toggler-inner">
                         <i className="sidenav-toggler-line"></i>
                         <i className="sidenav-toggler-line"></i>

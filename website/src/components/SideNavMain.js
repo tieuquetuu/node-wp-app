@@ -1,6 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {setupSideNav} from "../js/toggle-sidenav";
+import $ from "jquery";
+import {Collapse} from "bootstrap";
+import "popper";
 
 function SideNavMain() {
+
+    useEffect(() => {
+        setupSideNav(".sidenav");
+    });
+
     return (<nav className="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white"
                  id="sidenav-main" style={{height: "calc(100% - 84px)", top: 84}}>
         <div className="px-3 scrollbar-inner">
@@ -9,11 +18,11 @@ function SideNavMain() {
                 {/*<!-- Navigation -->*/}
                 <ul className="navbar-nav navbar-nav-docs">
                     <li className="nav-item">
-                        <a className="nav-link" href="#navbar-getting-started" data-toggle="collapse" role="button"
-                           aria-expanded="false" aria-controls="navbar-getting-started">
+                        <a className="nav-link" href="#navbar-feeds" data-toggle="collapse" role="button"
+                           aria-expanded="false" aria-controls="navbar-feeds">
                             Getting started
                         </a>
-                        <div className="collapse" id="navbar-getting-started">
+                        <div className="collapse" id="navbar-feeds">
                             <ul className="nav flex-column">
                                 <li className="nav-item">
                                     <a href="../docs/getting-started/installation.html"
