@@ -36,11 +36,43 @@ router.get('/', function(req, res, next) {
     }
 });
 
+router.get('/store', function (req, res) {
+    var {query} = req;
+    async function FetchStoreProducts(query) {
+        var {per_page, page} = query;
+        per_page = ["number", "string"].includes(typeof per_page) && parseInt(per_page) > 0 ? per_page : null;
+        page = ["number", "string"].includes(typeof page) && parseInt(per_page) > 0 ? page : null;
+        try {
+            var products = await WP_REST_API.products()
+                .param("per_page", per_page)
+                .param("page", page);
+
+            return products;
+        } catch (e) {
+            Promise.reject(e);
+        }
+    }
+    FetchStoreProducts(query)
+        .then(Success).catch(Failed);
+    function Success(products) {
+        res.render('store', {
+            helpers: helpers,
+            title: "Cửa Hàng",
+            bodyClass: "store",
+            products: products
+        });
+    }
+    function Failed(e) {
+        res.status(401).send(e)
+    }
+})
+
 router.get('/store/product/:id', function (req, res) {
     var {params} = req;
-    console.log(params)
-    async function getProduct(query) {
+    var {id} = params;
 
+    async function getProduct(id) {
+        return [];
     }
     function Success(product) {
         res.send(product)
@@ -48,7 +80,7 @@ router.get('/store/product/:id', function (req, res) {
     function Failed(e) {
         res.send(e)
     }
-    getProduct()
+    getProduct(id)
         .then(Success)
         .catch(Failed)
 });

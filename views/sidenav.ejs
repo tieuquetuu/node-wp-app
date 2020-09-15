@@ -1,0 +1,71 @@
+<!-- Sidenav -->
+<nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="px-3 scrollbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+            <!-- Navigation -->
+            <ul class="navbar-nav navbar-nav-feeds">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bolder" href="/">
+                        <i class="fad fa-home"></i>
+                        Trang Chủ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bolder" href="/store">
+                        <i class="fad fa-store-alt"></i>
+                        Cửa Hàng
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#navbar-styleguide" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-styleguide">
+                        Styleguide
+                    </a>
+                    <div class="collapse" id="navbar-styleguide">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="../docs/styleguide/breakpoints.html" class="nav-link">Breakpoints</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../docs/styleguide/colors.html" class="nav-link">Colors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../docs/styleguide/grid.html" class="nav-link">Grid</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../docs/styleguide/icons.html" class="nav-link">Icons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../docs/styleguide/spacing.html" class="nav-link">Spacing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../docs/styleguide/typography.html" class="nav-link">Typography</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <!-- Heading -->
+            <h6 class="navbar-heading mt-4">Danh Mục</h6>
+            <!-- Navigation -->
+            <ul class="navbar-nav mb-md-3">
+
+                <% [{
+                    icon: "fad fa-question-circle",
+                    label: "Điện gia dụng",
+                    slug: "dien-gia-dung"
+                }].forEach(function (item) {
+                    var catUrl = `/product-category/${item.slug}`;
+                    var label = item.label;
+                %>
+                    <li class="nav-item">
+                        <a class="nav-link text-capitalize" href="<%= catUrl %>">
+                            <i class="fad fa-question-circle"></i><%= label %>
+                        </a>
+                    </li>
+                <% }) %>
+
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -24,8 +24,8 @@ helpers.WebsiteBundleJs = function() {
 
 helpers.htmlEntitiesDecode = function(str) {
     const entities = new Entities();
-    var Title = entities.decode(str);
-    return Title;
+    var str = entities.decode(str);
+    return str;
 }
 
 module.exports = helpers;
