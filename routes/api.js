@@ -41,4 +41,19 @@ router.get('/products', function (req, res, next) {
         .catch(err => res.status(401).send(err));
 });
 
+router.get("/hoangquan-banggia", function (req, res, next){
+    var {body} = req;
+    // var XLSX = require("xlsx");
+    var path = require("path");
+    var fs = require("fs");
+    // var listHangDangWeb = XLSX.readFile(path.join(__dirname, "../data/List hàng đăng web.xls"));
+    // var tonKhoChiNhanh = XLSX.readFile(path.join(__dirname, "../data/Tồn kho chi nhánh.xls"));
+    // console.log(Object.keys(tonKhoChiNhanh))
+    // console.log(tonKhoChiNhanh.Sheets)
+    // res.send(tonKhoChiNhanh)
+
+    var data = fs.readFileSync(path.join(__dirname, "../data/banggia.json"), {encoding: "utf-8"});
+    res.send(data);
+});
+
 module.exports = router;
