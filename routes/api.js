@@ -67,26 +67,28 @@ router.get("/hoangquan-sanpham", function (req, res, next){
     }
     var danhSachSanPham = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/list_hang_dang_web.json"), {encoding: "utf-8"}));
     var tonKhoChiNhanh = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/ton_kho_chi_nhanh.json"), {encoding: "utf-8"}));
+    danhSachSanPham = danhSachSanPham.filter(item => tinhGia(item[" Giá bán lẻ "]) > 0);
     var danhSachSanPhamSapo = danhSachSanPham.map(function (item) {
-
-        var giaNhap = tinhGia(item[" Giá nhập "]);
         var giaBanLe = tinhGia(item[" Giá bán lẻ "]);
+        var giaNhap = tinhGia(item[" Giá nhập "]) || 0;
         var giaSiDacBiet = tinhGia(item[" Giá sỉ đặc biệt "]);
         var giaSi1 = tinhGia(item[" Giá sỉ 1 "]);
         var giaSi2 = tinhGia(item[" Giá sỉ 2 "]);
         var nhomHang = item["Nhóm hàng"];
         var product = {
-            "Tên sản phẩm": item.s_Product_Name,
+            "Tên sản phẩm*": item.s_Product_Name,
             "Hình thức quản lý sản phẩm": "Sản phẩm thường",
             "Mã loại sản phẩm" : nhomHang,
+            "Mã SKU": item.s_Product_ID,
+            "Barcode": item.s_Product_ID,
+            "Áp dụng thuế": "Có",
+            "PL_Giá nhập" : giaNhap,
             "PL_Giá bán buôn": giaSi1,
             "PL_Giá sỉ Đặc Biệt": giaSiDacBiet,
             "PL_Giá bán lẻ" : giaBanLe,
             "PL_Giá sỉ 1": giaSi1,
             "PL_Giá sỉ 2": giaSi2,
             // "Mã loại sản phẩm": ""
-            "Mã SKU": item.s_Product_ID,
-            "Barcode": item.s_Product_ID,
             // "Đơn vị": donViTinh,
             // "Áp dụng thuế": "Có",
             // "LC_CN1_Giá vốn khởi tạo*": giaNhap,
@@ -101,13 +103,29 @@ router.get("/hoangquan-sanpham", function (req, res, next){
         // Hoàng Quân Quận 7	CN3
         // Hoàng Quân Trung Tâm	CN4
         // Hoàng Quân Online	CN5
-        var thongTinTonKho =  tonKhoChiNhanh.find(obj => item.s_Product_ID === obj.s_Product_ID);
-        thongTinTonKho = typeof thongTinTonKho == "object" && thongTinTonKho instanceof Object ? thongTinTonKho : null;
-        if (thongTinTonKho) {
+        var thongTinTonKho =  tonKhoChiNhanh.find(obj => item.s_Product_ID === obj.s_Product_ID) || null;
+        // thongTinTonKho = typeof thongTinTonKho == "object" && thongTinTonKho instanceof Object ? thongTinTonKho : null;
+        var donViTinh = thongTinTonKho ? thongTinTonKho["Đơn vị tính"] : null;
+        var soLuongTonKhoCN1 = thongTinTonKho ? tinhSoLuong(thongTinTonKho[" Hai Bà Trưng "]) : 0;
+        var soLuongTonKhoCN2 = thongTinTonKho ? tinhSoLuong(thongTinTonKho[" Vinhomes  "]) : 0;
+        var soLuongTonKhoCN3 = thongTinTonKho ? tinhSoLuong(thongTinTonKho[" Quận 7 "]) : 0;
+        product["Đơn vị"] = donViTinh;
+        product["LC_CN1_Giá vốn khởi tạo*"] = giaNhap;
+        product["LC_CN1_Tồn kho ban đầu*"] = soLuongTonKhoCN1;
+        product["LC_CN2_Giá vốn khởi tạo*"] = giaNhap;
+        product["LC_CN2_Tồn kho ban đầu*"] = soLuongTonKhoCN2;
+        product["LC_CN3_Giá vốn khởi tạo*"] = giaNhap;
+        product["LC_CN3_Tồn kho ban đầu*"] = soLuongTonKhoCN3;
+        product["LC_CN4_Giá vốn khởi tạo*"] = giaNhap;
+        product["LC_CN4_Tồn kho ban đầu*"] = 0;
+        product["LC_CN5_Giá vốn khởi tạo*"] = giaNhap;
+        product["LC_CN5_Tồn kho ban đầu*"] = 0;
+        /*if (thongTinTonKho) {
             var donViTinh = thongTinTonKho["Đơn vị tính"];
             var soLuongTonKhoCN1 = tinhSoLuong(thongTinTonKho[" Hai Bà Trưng "]);
             var soLuongTonKhoCN2 = tinhSoLuong(thongTinTonKho[" Vinhomes  "]);
             var soLuongTonKhoCN3 = tinhSoLuong(thongTinTonKho[" Quận 7 "]);
+            product["Đơn vị"] = donViTinh;
             product["LC_CN1_Giá vốn khởi tạo*"] = giaNhap;
             product["LC_CN1_Tồn kho ban đầu*"] = soLuongTonKhoCN1;
             product["LC_CN2_Giá vốn khởi tạo*"] = giaNhap;
@@ -118,20 +136,16 @@ router.get("/hoangquan-sanpham", function (req, res, next){
             product["LC_CN4_Tồn kho ban đầu*"] = 0;
             product["LC_CN5_Giá vốn khởi tạo*"] = giaNhap;
             product["LC_CN5_Tồn kho ban đầu*"] = 0;
-            product["Đơn vị"] = donViTinh;
-        }
+        }*/
         return product
     });
+
     var data = {msg: "ok"};
     // console.log(danhSachSanPhamSapo.length)
     // var workbook = new Excel.Workbook();
     // var worksheet = workbook.addWorksheet('Sản Phẩm')
-    // var file = fs.writeFileSync(path.join(__dirname, ' ../data/sanpham.json'), JSON.stringify({
-    //     "Hoàng Quân": {
-    //         "Sản phẩm" : danhSachSanPhamSapno
-    //     }
-    // }));
-    res.send(danhSachSanPhamSapo[6]);
+    fs.writeFileSync('data/toanbosanpham-5.json', JSON.stringify(danhSachSanPhamSapo));
+    // res.send(danhSachSanPhamSapo.filter(obj => obj["Barcode"] == "4514603184013"));
 });
 
 module.exports = router;
