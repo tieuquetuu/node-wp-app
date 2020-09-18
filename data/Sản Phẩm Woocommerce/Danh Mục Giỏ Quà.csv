@@ -1,0 +1,46 @@
+Tên sản phẩm*,Hình thức quản lý sản phẩm,Mã loại sản phẩm,Mã SKU*,Barcode,Áp dụng thuế,PL_Giá nhập,PL_Giá bán buôn,PL_Giá sỉ Đặc Biệt,PL_Giá bán lẻ,PL_Giá sỉ 1,PL_Giá sỉ 2,Đơn vị,LC_CN1_Giá vốn khởi tạo*,LC_CN1_Tồn kho ban đầu*,LC_CN2_Giá vốn khởi tạo*,LC_CN2_Tồn kho ban đầu*,LC_CN3_Giá vốn khởi tạo*,LC_CN3_Tồn kho ban đầu*,LC_CN4_Giá vốn khởi tạo*,LC_CN4_Tồn kho ban đầu*,LC_CN5_Giá vốn khởi tạo*,LC_CN5_Tồn kho ban đầu*
+Túi giấy đựng hộp quà tết HQ,Sản phẩm thường,Gio Qua,112234,112234,Có,15000,20000,20000,25000,20000,20000,Cái,15000,18,15000,0,15000,0,15000,0,15000,0
+Túi giấy đựng rượu ,Sản phẩm thường,Gio Qua,1122345,1122345,Có,13500,15000,15000,20000,15000,15000,Cái ,13500,803,13500,0,13500,0,13500,0,13500,0
+Giỏ đựng quà tết hộp giấy hoa văn ,Sản phẩm thường,Gio Qua,1234,1234,Có,40000,45000,45000,50000,45000,47000,Cái,40000,11,40000,0,40000,0,40000,0,40000,0
+Hộp quà giấy kích thước 32x32x7.5,Sản phẩm thường,Gio Qua,323275,323275,Có,54000,80000,80000,100000,80000,80000,Cái,54000,742,54000,20,54000,0,54000,0,54000,0
+Hộp quà giấy kích thước 32x32x9.5,Sản phẩm thường,Gio Qua,323295,323295,Có,66000,90000,90000,110000,90000,90000,Cái,66000,412,66000,0,66000,0,66000,0,66000,0
+Hộp đựng rượu mơ ,Sản phẩm thường,Gio Qua,323296,323296,Có,7500,10000,10000,15000,10000,10000,Cái,7500,3,7500,0,7500,0,7500,0,7500,0
+"Hộp Quà tặng Ajinomoto dầu ăn, hạt nêm ",Sản phẩm thường,Gio Qua,4901111330009,4901111330009,Có,370000,390000,390000,500000,390000,400000,hộp,370000,0,370000,0,370000,0,370000,0,370000,0
+6196-Hộp quà tặng Nisshin dầu ăn,Sản phẩm thường,Gio Qua,4902380426196,4902380426196,Có,350000,370000,370000,480000,370000,380000,hộp(6),350000,0,350000,0,350000,0,350000,0,350000,0
+Giỏ quà Thái có quai lót ,Sản phẩm thường,Gio Qua,891111,891111,Có,73000,85000,85000,120000,85000,85000,Cái ,73000,34,73000,0,73000,0,73000,0,73000,0
+Giỏ mây gói quà hình chữ nhật viền đỏ,Sản phẩm thường,Gio Qua,891112,891112,Có,53000,65000,65000,90000,65000,65000,cái,53000,108,53000,0,53000,0,53000,0,53000,0
+Giỏ mây rừng hình ovan,Sản phẩm thường,Gio Qua,891113,891113,Có,73000,85000,85000,120000,85000,85000,Hộp,73000,25,73000,1,73000,0,73000,0,73000,0
+Giỏ oval nhựa size nhỏ ,Sản phẩm thường,Gio Qua,891114,891114,Có,12000,50000,50000,20000,50000,50000,cái,12000,17,12000,0,12000,0,12000,0,12000,0
+Giỏ quà hộp gỗ ván ép,Sản phẩm thường,Gio Qua,891115,891115,Có,48000,60000,60000,90000,60000,60000,Cái,48000,167,48000,0,48000,0,48000,0,48000,0
+Giỏ quà tết ( 7.5-8 tr),Sản phẩm thường,Gio Qua,gio 15,gio 15,Có,0,,,8000,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( dưới 1tr),Sản phẩm thường,Gio Qua,gio1,gio1,Có,0,,,1000,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết (5tr-5.5 tr),Sản phẩm thường,Gio Qua,gio10,gio10,Có,0,,,5500,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết (5.5tr-6  tr),Sản phẩm thường,Gio Qua,gio11,gio11,Có,0,,,6000,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 6-6.5 tr),Sản phẩm thường,Gio Qua,gio12,gio12,Có,0,,,6500,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 6.5 -7tr),Sản phẩm thường,Gio Qua,gio13,gio13,Có,0,,,7000,,,Giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 7-7.5tr),Sản phẩm thường,Gio Qua,gio14,gio14,Có,0,,,7500,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 8 tr-8.5tr),Sản phẩm thường,Gio Qua,gio16,gio16,Có,0,,,8500,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 8.5-9tr),Sản phẩm thường,Gio Qua,gio17,gio17,Có,0,,,9000,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 9 tr-9.5tr),Sản phẩm thường,Gio Qua,gio18,gio18,Có,0,,,9500,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 9.5tr-10tr),Sản phẩm thường,Gio Qua,gio19,gio19,Có,0,,,10000,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 1tr-1.5tr),Sản phẩm thường,Gio Qua,gio2,gio2,Có,0,,,1500,,,giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 1.5-2 tr),Sản phẩm thường,Gio Qua,gio3,gio3,Có,0,,,2000,,,giỏ,0,0,0,1,0,1,0,0,0,0
+Giỏ quà tết ( 2.-2.5tr),Sản phẩm thường,Gio Qua,gio4,gio4,Có,0,,,2500,,,Giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 2.5-3 tr),Sản phẩm thường,Gio Qua,gio5,gio5,Có,0,45000,45000,3000,45000,45000,cái,0,0,0,2,0,0,0,0,0,0
+"Giỏ quà tết ( 3-3,5 tr)",Sản phẩm thường,Gio Qua,gio6,gio6,Có,0,,,3500,,,Giỏ,0,0,0,1,0,0,0,0,0,0
+Giỏ quà tết ( 3.5-4tr),Sản phẩm thường,Gio Qua,gio7,gio7,Có,0,,,4000,,,Giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết ( 4-4.5tr),Sản phẩm thường,Gio Qua,gio8,gio8,Có,0,,,4500,,,Giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà tết (4.5tr-5tr),Sản phẩm thường,Gio Qua,gio9,gio9,Có,0,,,5000,,,Giỏ,0,0,0,0,0,0,0,0,0,0
+Giỏ quà nhựa loại nhỏ ,Sản phẩm thường,Gio Qua,gionh,gionh,Có,10000,15000,15000,20000,15000,15000,Cái,10000,0,10000,0,10000,0,10000,0,10000,0
+Hộp quà tết dưới 500,Sản phẩm thường,Gio Qua,hop1,hop1,Có,0,,,500000,,,Hộp ,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( 4-4.5tr),Sản phẩm thường,Gio Qua,hop10,hop10,Có,0,,,4500,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( 4.5-5tr),Sản phẩm thường,Gio Qua,hop11,hop11,Có,0,,,5000,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( trên 500),Sản phẩm thường,Gio Qua,hop2,hop2,Có,0,,,1000,,,Hộp ,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết (1 tr-1.5tr),Sản phẩm thường,Gio Qua,hop3,hop3,Có,0,,,1500,,,Hộp,0,0,0,2,0,0,0,0,0,0
+Hộp quà tết (1.5-2 tr),Sản phẩm thường,Gio Qua,hop4,hop4,Có,0,,,2000,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( 2-2.5 tr),Sản phẩm thường,Gio Qua,hop5,hop5,Có,0,,,2500,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết (2.5-3  tr),Sản phẩm thường,Gio Qua,hop6,hop6,Có,0,,,3000,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( 2.5 - 3tr),Sản phẩm thường,Gio Qua,hop7,hop7,Có,0,,,3000,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( 3-3.5 tr),Sản phẩm thường,Gio Qua,hop8,hop8,Có,0,,,3500,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp quà tết ( 3.5-4tr),Sản phẩm thường,Gio Qua,hop9,hop9,Có,0,,,4000,,,Hộp,0,0,0,0,0,0,0,0,0,0
+Hộp rượu ,Sản phẩm thường,Gio Qua,hq2,hq2,Có,0,85000,85000,15000,85000,75000,Cái,0,0,0,0,0,0,0,0,0,0
